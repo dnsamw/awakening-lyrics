@@ -58,7 +58,7 @@ export default function SongLyrics() {
         >
           {track.lyrics}
         </pre>
-        <div className="flex gap-4">
+        <div className="flex gap-4 justify-center">
           <Link to="/" className="text-black font-rubik-80s">
             <div className="mt-2 md:mt-6 bg-lime-400 hover:bg-lime-500 w-15 md:min-w-35 p-2 flex justify-center items-center">
               <span className="md:hidden"> Album</span>
