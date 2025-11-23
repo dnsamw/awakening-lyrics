@@ -7,6 +7,23 @@ export default function SongLyrics() {
   const num = parseInt(params.trackNumber || "", 10);
   const track = trackList.find((t) => t.trackNumber === num);
 
+
+  const getNextTrackUrl = () => {
+    const currentIndex = trackList.findIndex((t) => t.trackNumber === num);
+    if (currentIndex === -1 || currentIndex === trackList.length - 1) {
+      return "/";
+    }
+    return `/track/${trackList[currentIndex + 1].trackNumber}`;
+  };
+
+  const getPreviousTrackUrl = () => {
+    const currentIndex = trackList.findIndex((t) => t.trackNumber === num);
+    if (currentIndex === -1 || currentIndex === 0) {
+      return "/";
+    }
+    return `/track/${trackList[currentIndex - 1].trackNumber}`;
+  };
+
   if (!track) {
     return (
       <div className="p-6 text-center">
@@ -41,10 +58,34 @@ export default function SongLyrics() {
         >
           {track.lyrics}
         </pre>
-        <div className="mt-2 md:mt-6 bg-lime-400 hover:bg-lime-500 w-40 p-2 flex justify-center items-center">
+        <div className="flex gap-4">
           <Link to="/" className="text-black font-rubik-80s">
-            ← Back to album
+            <div className="mt-2 md:mt-6 bg-lime-400 hover:bg-lime-500 w-15 md:min-w-35 p-2 flex justify-center items-center">
+              <span className="md:hidden"> Album</span>
+              <span className="hidden md:inline">Back to album</span>
+            </div>
           </Link>
+
+          {getPreviousTrackUrl() !== "/" && (
+            <Link
+              to={getPreviousTrackUrl()}
+              className="text-black font-rubik-80s"
+            >
+              <div className="mt-2 md:mt-6 bg-lime-400 hover:bg-lime-500 w-15 md:min-w-35 p-2 flex justify-center items-center">
+                <span className="md:hidden"> ← </span>
+                <span className="hidden md:inline">← Previous Track</span>
+              </div>
+            </Link>
+          )}
+
+          {getNextTrackUrl() !== "/" && (
+            <Link to={getNextTrackUrl()} className="text-black font-rubik-80s">
+              <div className="mt-2 md:mt-6 bg-lime-400 hover:bg-lime-500 w-15 md:min-w-35 p-2 flex justify-center items-center">
+                <span className="md:hidden"> → </span>
+                <span className="hidden md:inline">Next Track →</span>
+              </div>
+            </Link>
+          )}
         </div>
       </div>
     </>

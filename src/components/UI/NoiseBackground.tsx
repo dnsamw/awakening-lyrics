@@ -23,7 +23,6 @@ const NoiseBackground = () => {
       const w = canvas.width;
       const h = canvas.height;
 
-      // Ensure dimensions are valid before creating image data
       if (w <= 0 || h <= 0) return;
 
       const iData = ctx.createImageData(w, h);
@@ -44,7 +43,6 @@ const NoiseBackground = () => {
 
     resize();
 
-    // Small delay to ensure canvas is properly sized before starting animation
     setTimeout(() => {
       loop();
     }, 0);
