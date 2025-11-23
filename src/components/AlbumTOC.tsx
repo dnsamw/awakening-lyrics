@@ -18,7 +18,7 @@ function AlbumTOC() {
             Awakening - Born Between Two Prayers Lyrics
           </h1>
         </div>
-        <div className="flex py-5 flex-col gap-1 md:gap-5 justify-center items-center w-full overflow-y-scroll">
+        <div className="flex py-5 flex-col gap-1 md:gap-5 justify-center items-center w-full overflow-y-auto">
           {trackList.map((track) => (
             <Link
               key={track.trackNumber}
