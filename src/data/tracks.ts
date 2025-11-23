@@ -12,20 +12,72 @@ export type Track = {
   trackNumber: number;
   title: string;
   lyrics: string;
+  artist: string;
+  image: string;
 };
 
 export const trackList: Track[] = [
   {
     trackNumber: 1,
     title: "The Awakening",
+    artist: "Charitha Attalage",
     lyrics: theAwakening,
+    image: "the_awakening.jpg",
   },
-  { trackNumber: 2, title: "Omkaraya", lyrics: omkaraya },
-  { trackNumber: 3, title: "Kandulu Muthuhara", lyrics: kanduluMuthuhara },
-  { trackNumber: 4, title: "Dhole", lyrics: dhole },
-  { trackNumber: 5, title: "Monara Pile", lyrics: monaraPile },
-  { trackNumber: 6, title: "Sanda Nihanda Wela", lyrics: sandaNihandaWela },
-  { trackNumber: 7, title: "Aharawanna Epa", lyrics: aharawannaEpa },
-  { trackNumber: 8, title: "Thelakataha Gatha", lyrics: thelakatahaGatha },
-  { trackNumber: 9, title: "Yogeshwari", lyrics: yogeshwari },
+  {
+    trackNumber: 2,
+    title: "Omkaraya",
+    artist: "Charitha Attalage",
+    lyrics: omkaraya,
+    image: "omkaraya.jpg",
+  },
+  {
+    trackNumber: 3,
+    title: "Kandulu Muthuhara",
+    artist: "Charitha Attalage",
+    lyrics: kanduluMuthuhara,
+    image: "kandulu_muthuhara.jpg",
+  },
+  {
+    trackNumber: 4,
+    title: "Dhole",
+    artist: "Charitha Attalage",
+    lyrics: dhole,
+    image: "dhole.jpg",
+  },
+  {
+    trackNumber: 5,
+    title: "Monara Pile",
+    artist: "Charitha Attalage",
+    lyrics: monaraPile,
+    image: "monara_pile.jpg",
+  },
+  {
+    trackNumber: 6,
+    title: "Sanda Nihanda Wela",
+    artist: "Charitha Attalage",
+    lyrics: sandaNihandaWela,
+    image: "sanda_nihanda_wela.jpg",
+  },
+  {
+    trackNumber: 7,
+    title: "Aharawanna Epa",
+    artist: "Charitha Attalage",
+    lyrics: aharawannaEpa,
+    image: "aharawanna_epa.jpg",
+  },
+  {
+    trackNumber: 8,
+    title: "Thelakataha Gatha",
+    artist: "Charitha Attalage",
+    lyrics: thelakatahaGatha,
+    image: "thelakataha_gatha.jpg",
+  },
+  {
+    trackNumber: 9,
+    title: "Yogeshwari",
+    artist: "Charitha Attalage",
+    lyrics: yogeshwari,
+    image: "yogeshwari.jpg",
+  },
 ];
