@@ -1,12 +1,14 @@
 import { useParams, Link } from "react-router-dom";
 import { trackList } from "../data/tracks";
 import SEO from "../components/SEO";
+import DecryptedText from "../components/UI/DecryptedText";
+import ArrowRight from "../components/Icons/ArrowRight";
+import ArrowLeft from "../components/Icons/ArrowLeft";
 
 export default function SongLyrics() {
   const params = useParams();
   const num = parseInt(params.trackNumber || "", 10);
   const track = trackList.find((t) => t.trackNumber === num);
-
 
   const getNextTrackUrl = () => {
     const currentIndex = trackList.findIndex((t) => t.trackNumber === num);
@@ -46,7 +48,11 @@ export default function SongLyrics() {
 
       <div className="md:p-6 max-w-3xl mx-auto text-lime-200">
         <h2 className="text-4xl mb-4 font-rubik-80s">
-          {track.trackNumber}. {track.title}
+          <DecryptedText
+            text={`${track.trackNumber}. ${track.title}`}
+            animateOn="view"
+            revealDirection="center"
+          />
         </h2>
         <pre
           className="whitespace-pre-wrap text-lg leading-relaxed h-[68vh] min-[376px]:h-[75vh] min-[768px]:h-[70vh] min-[782px]:h-[73vh] overflow-y-auto
@@ -58,10 +64,10 @@ export default function SongLyrics() {
         >
           {track.lyrics}
         </pre>
-        <div className="flex gap-4 justify-center">
+        <div className="flex gap-4 justify-center pt-2">
           <Link to="/" className="text-black font-rubik-80s">
-            <div className="mt-2 md:mt-6 bg-lime-400 hover:bg-lime-500 w-15 md:min-w-35 p-2 flex justify-center items-center">
-              <span className="md:hidden"> Album</span>
+            <div className="md:mt-6 bg-lime-400 hover:bg-lime-500 w-15 md:min-w-35 md:p-2 flex justify-center items-center h-full md:h-auto">
+              <div className="md:hidden text-xl h-full flex justify-center items-center"> Album</div>
               <span className="hidden md:inline">Back to album</span>
             </div>
           </Link>
@@ -71,8 +77,10 @@ export default function SongLyrics() {
               to={getPreviousTrackUrl()}
               className="text-black font-rubik-80s"
             >
-              <div className="mt-2 md:mt-6 bg-lime-400 hover:bg-lime-500 w-15 md:min-w-35 p-2 flex justify-center items-center">
-                <span className="md:hidden"> ← </span>
+              <div className="md:mt-6 bg-lime-400 hover:bg-lime-500 w-15 md:min-w-35 p-2 flex justify-center items-center h-full md:h-auto">
+                <span className="md:hidden">
+                  <ArrowLeft />
+                </span>
                 <span className="hidden md:inline">← Previous Track</span>
               </div>
             </Link>
@@ -80,8 +88,10 @@ export default function SongLyrics() {
 
           {getNextTrackUrl() !== "/" && (
             <Link to={getNextTrackUrl()} className="text-black font-rubik-80s">
-              <div className="mt-2 md:mt-6 bg-lime-400 hover:bg-lime-500 w-15 md:min-w-35 p-2 flex justify-center items-center">
-                <span className="md:hidden"> → </span>
+              <div className="md:mt-6 bg-lime-400 hover:bg-lime-500 w-15 md:min-w-35 p-2 flex justify-center items-center h-full md:h-auto">
+                <span className="md:hidden">
+                  <ArrowRight />
+                </span>
                 <span className="hidden md:inline">Next Track →</span>
               </div>
             </Link>
