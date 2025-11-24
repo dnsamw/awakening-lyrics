@@ -57,17 +57,18 @@ export default function SongLyrics() {
         <pre
           className="whitespace-pre-wrap text-lg leading-relaxed h-[68vh] min-[376px]:h-[75vh] min-[768px]:h-[70vh] min-[782px]:h-[73vh] overflow-y-auto
         [&::-webkit-scrollbar]:w-2
-        [&::-webkit-scrollbar-track]:bg-lime-100
-        [&::-webkit-scrollbar-thumb]:bg-lime-300
-        dark:[&::-webkit-scrollbar-track]:bg-lime-700
-        dark:[&::-webkit-scrollbar-thumb]:bg-lime-500"
+        [&::-webkit-scrollbar-track]:bg-lime-700
+        [&::-webkit-scrollbar-thumb]:bg-lime-500"
         >
           {track.lyrics}
         </pre>
         <div className="flex gap-4 justify-center pt-2">
           <Link to="/" className="text-black font-rubik-80s">
             <div className="md:mt-6 bg-lime-400 hover:bg-lime-500 w-15 md:min-w-35 md:p-2 flex justify-center items-center h-full md:h-auto">
-              <div className="md:hidden text-xl h-full flex justify-center items-center"> Album</div>
+              <div className="md:hidden text-xl h-full flex justify-center items-center">
+                {" "}
+                Album
+              </div>
               <span className="hidden md:inline">Back to album</span>
             </div>
           </Link>
