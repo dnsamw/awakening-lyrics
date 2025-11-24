@@ -1,9 +1,11 @@
+import ConcertCountdown from "../../ConcertCountdown";
+
 function TopMidH() {
   return (
     <div className="relative" style={{ gridArea: "1 / 4", zIndex: 15 }}>
       <div className="absolute font-['VT323'] text-light-green top-2 w-full text-center">
         <div className="text-lime-400 font-['VT323']" style={{ fontSize: "16px" }}>
-          Online Lyrics - Awakening
+          <ConcertCountdown />
         </div>
       </div>
       <svg

@@ -1,3 +1,4 @@
+import ConcertCountdown from "./ConcertCountdown";
 import BottomLeftBevelCorner from "./UI/frame/BottomLeftBevelCorner";
 import BottomLeftHShort from "./UI/frame/BottomLeftHShort";
 import BottomLeftMidBevel from "./UI/frame/BottomLeftMidBevel";
@@ -107,7 +108,7 @@ export default function SciFiBorderBox({
                 className="text-primary font-['VT323'] text-lime-400"
                 style={{ fontSize: "16px" }}
               >
-                Online Lyrics
+                <ConcertCountdown />
               </div>
             </div>
             <div className="absolute -bottom-px left-1/2 transform -translate-x-1/2 p-3 z-50">
