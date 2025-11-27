@@ -46,8 +46,8 @@ export default function SongLyrics() {
         url={`https://awakening-lyrics.vercel.app/track/${num}`}
       />
 
-      <div className="md:p-6 max-w-3xl mx-auto text-lime-200">
-        <h2 className="text-4xl mb-4 font-rubik-80s">
+      <div className="w-full h-full overflow-hidden relative md:p-6 max-w-3xl flex flex-col mx-auto text-lime-200">
+        <h2 className="pt-10 md:pt-15 text-4xl mb-4 font-rubik-80s">
           <DecryptedText
             text={`${track.trackNumber}. ${track.title}`}
             animateOn="view"
@@ -55,14 +55,14 @@ export default function SongLyrics() {
           />
         </h2>
         <pre
-          className="whitespace-pre-wrap text-lg leading-relaxed h-[68vh] min-[376px]:h-[75vh] min-[768px]:h-[70vh] min-[782px]:h-[73vh] overflow-y-auto
+          className="whitespace-pre-wrap text-lg leading-relaxed h-full flex-1 overflow-y-auto
         [&::-webkit-scrollbar]:w-2
         [&::-webkit-scrollbar-track]:bg-lime-700
         [&::-webkit-scrollbar-thumb]:bg-lime-500"
         >
           {track.lyrics}
         </pre>
-        <div className="flex gap-4 justify-center pt-2">
+        <div className="flex gap-4 justify-center pt-2 pb-10 md:pb-15">
           <Link to="/" className="text-black font-rubik-80s">
             <div className="md:mt-6 bg-lime-400 hover:bg-lime-500 w-15 md:min-w-35 md:p-2 flex justify-center items-center h-full md:h-auto">
               <div className="md:hidden text-xl h-full flex justify-center items-center">

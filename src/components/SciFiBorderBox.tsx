@@ -84,7 +84,7 @@ export default function SciFiBorderBox({
 
             <div></div>
             <div></div>
-            <div className="absolute w-screen h-screen px-8 py-20">
+            <div className="absolute w-screen h-screen"> {/* px-8 py-20 */}
               {children}
             </div>
             <div></div>
