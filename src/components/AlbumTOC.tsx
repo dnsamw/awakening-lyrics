@@ -33,6 +33,7 @@ function AlbumTOC() {
               <SongListItem
                 title={track.title}
                 trackNumber={track.trackNumber}
+                isRap={track?.isRap}
               />
             </Link>
           ))}

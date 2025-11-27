@@ -96,12 +96,12 @@ export default function SciFiBorderBox({
               className="absolute inset-0 w-full z-0 flex items-center justify-center"
               // style={{ height: "100vh" }}
             >
-              <img
+              {/* <img
                 alt="Face Background"
                 className="w-full opacity-40 "
                 src="/assets/face-new-CiDGrYXw.png"
                 style={{ height: "100vh", objectFit: "cover" }}
-              />
+              /> */}
             </div>
             <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 p-2 z-50">
               <div

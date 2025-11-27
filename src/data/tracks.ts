@@ -14,6 +14,7 @@ export type Track = {
   lyrics: string;
   artist: string;
   image: string;
+  isRap?: boolean;
 };
 
 export const trackList: Track[] = [
@@ -23,6 +24,7 @@ export const trackList: Track[] = [
     artist: "Charitha Attalage",
     lyrics: theAwakening,
     image: "the_awakening.jpg",
+    isRap: true,
   },
   {
     trackNumber: 2,
@@ -37,6 +39,7 @@ export const trackList: Track[] = [
     artist: "Charitha Attalage",
     lyrics: kanduluMuthuhara,
     image: "kandulu_muthuhara.jpg",
+    isRap: true,
   },
   {
     trackNumber: 4,
@@ -65,6 +68,7 @@ export const trackList: Track[] = [
     artist: "Charitha Attalage",
     lyrics: aharawannaEpa,
     image: "aharawanna_epa.jpg",
+    isRap: true,
   },
   {
     trackNumber: 8,
@@ -79,5 +83,6 @@ export const trackList: Track[] = [
     artist: "Charitha Attalage",
     lyrics: yogeshwari,
     image: "yogeshwari.jpg",
+    isRap: true,
   },
 ];

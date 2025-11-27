@@ -3,9 +3,10 @@ import DecryptedText from "./DecryptedText";
 type Props = {
   title: string;
   trackNumber: number;
+  isRap?: boolean;
 };
 
-function SongListItem({ title, trackNumber }: Props) {
+function SongListItem({ title, trackNumber, isRap = false }: Props) {
   return (
     <div className="p-2 text-lime-400 text-3xl border-l-2  bg-lime-400/10 hover:bg-lime-400/30 w-full md:w-[90%] lg:w-[60%]">
       <div className=" h-7 flex items-center  pointer-events-auto pointer transition-colors text-base text-accent-dark default cursor-pointer!">
@@ -15,6 +16,10 @@ function SongListItem({ title, trackNumber }: Props) {
             animateOn="view"
             revealDirection="center"
           />
+
+          {isRap && (
+            <span className="ml-2 text-sm bg-lime-400 text-black">[RAP]</span>
+          )}
         </span>
       </div>
     </div>
