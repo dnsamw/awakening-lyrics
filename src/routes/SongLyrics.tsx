@@ -4,28 +4,14 @@ import SEO from "../components/SEO";
 import DecryptedText from "../components/UI/DecryptedText";
 import ArrowRight from "../components/Icons/ArrowRight";
 import ArrowLeft from "../components/Icons/ArrowLeft";
+import { useTrackNavigation } from "../hooks/useTrackNavigation";
+import { APP_HOST_URL_PROD } from "../config";
 
 export default function SongLyrics() {
   const params = useParams();
   const num = parseInt(params.trackNumber || "", 10);
+  const { getNextTrackUrl, getPreviousTrackUrl } = useTrackNavigation(num);
   const track = trackList.find((t) => t.trackNumber === num);
-
-  const getNextTrackUrl = () => {
-    const currentIndex = trackList.findIndex((t) => t.trackNumber === num);
-    if (currentIndex === -1 || currentIndex === trackList.length - 1) {
-      return "/";
-    }
-    return `/track/${trackList[currentIndex + 1].trackNumber}`;
-  };
-
-  const getPreviousTrackUrl = () => {
-    const currentIndex = trackList.findIndex((t) => t.trackNumber === num);
-    if (currentIndex === -1 || currentIndex === 0) {
-      return "/";
-    }
-    return `/track/${trackList[currentIndex - 1].trackNumber}`;
-  };
-
   if (!track) {
     return (
       <div className="p-6 text-center">
@@ -42,8 +28,8 @@ export default function SongLyrics() {
       <SEO
         title={`${track.title} - ${track.artist}`}
         description={`Lyrics for ${track.title} by ${track.artist}`}
-        image={`https://awakening-lyrics.vercel.app/${track.image}`}
-        url={`https://awakening-lyrics.vercel.app/track/${num}`}
+        image={`${APP_HOST_URL_PROD}/${track.image}`}
+        url={`${APP_HOST_URL_PROD}/track/${num}`}
       />
 
       <div className="w-full h-full overflow-hidden relative md:p-6 max-w-3xl flex flex-col mx-auto text-lime-200">
