@@ -89,19 +89,27 @@ function ConcertCountdown() {
     return num.toString().padStart(digits, "0");
   };
 
+  return (
+    <div className="text-lime-400 font-rubik-80s flex justify-center md:text-2xl">
+      <div>POSTPONED!</div>
+    </div>
+  );
+
   if (timeLeft.isEventOver) {
-    return (<div className="text-lime-400 flex justify-center gap-4">
+    return (
+      <div className="text-lime-400 flex justify-center gap-4">
         <div className="bg-lime-400/30 px-2 border">29 ✓</div>
         <div className="bg-lime-400/30 px-2 border">30 ✓</div>
-    </div>);
+      </div>
+    );
   }
 
   return (
     <div className="text-lime-400 font-rubik-80s flex justify-center md:text-2xl">
-      <div>{formatNumber(timeLeft.days)}D</div>
-      :<div>{formatNumber(timeLeft.hours)}H</div>
-      :<div>{formatNumber(timeLeft.minutes)}M</div>
-      :<div>
+      <div>{formatNumber(timeLeft.days)}D</div>:
+      <div>{formatNumber(timeLeft.hours)}H</div>:
+      <div>{formatNumber(timeLeft.minutes)}M</div>:
+      <div>
         {formatNumber(timeLeft.seconds)}.{formatNumber(timeLeft.milliseconds)}S
       </div>
     </div>

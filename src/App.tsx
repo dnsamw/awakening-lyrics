@@ -3,6 +3,7 @@ import SciFiBorderBox from "./components/SciFiBorderBox";
 import AlbumTOC from "./components/AlbumTOC";
 import SongLyrics from "./routes/SongLyrics";
 import { Routes, Route } from "react-router-dom";
+import { ErrorBoundary } from "./components/ErrorBoundary";
 // import NoiseBackground from "./components/UI/NoiseBackground";
 
 function App() {
@@ -16,10 +17,12 @@ bg-size-[5px_5px]
 mask-[radial-gradient(ellipse_50%_50%_at_50%_50%,#000_80%,transparent_100%)]"
       />
       <SciFiBorderBox>
-        <Routes>
-          <Route path="/" element={<AlbumTOC />} />
-          <Route path="/track/:trackNumber" element={<SongLyrics />} />
-        </Routes>
+        <ErrorBoundary>
+          <Routes>
+            <Route path="/" element={<AlbumTOC />} />
+            <Route path="/track/:trackNumber" element={<SongLyrics />} />
+          </Routes>
+        </ErrorBoundary>
       </SciFiBorderBox>
     </div>
   );
